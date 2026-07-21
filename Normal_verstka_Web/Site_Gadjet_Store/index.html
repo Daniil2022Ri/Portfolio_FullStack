@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechStore — Магазин гаджетов</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="logo">⚡ TechStore</div>
+      <nav class="nav">
+        <a href="#">Главная</a>
+        <a href="#products">Товары</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <div class="cart-icon" @click="showCart = !showCart">
+        🛒 <span class="cart-count">{{ cart.length }}</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Будущее уже здесь</h1>
+        <p>Топовые гаджеты по честным ценам. Доставка за 2 часа.</p>
+        <button class="btn-primary" @click="scrollToProducts">Смотреть товары</button>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card" style="--delay:0s">
+          <div class="card-icon">🎧</div>
+          <div class="card-title">Наушники</div>
+          <div class="card-price">от 4 990 ₽</div>
+        </div>
+        <div class="floating-card" style="--delay:0.2s">
+          <div class="card-icon">⌚</div>
+          <div class="card-title">Смарт-часы</div>
+          <div class="card-price">от 12 990 ₽</div>
+        </div>
+        <div class="floating-card" style="--delay:0.4s">
+          <div class="card-icon">📱</div>
+          <div class="card-title">Смартфоны</div>
+          <div class="card-price">от 29 990 ₽</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <h2 class="section-title">Популярные товары</h2>
+      <div class="filters">
+        <button 
+          v-for="cat in categories" 
+          :key="cat"
+          :class="['filter-btn', { active: activeCategory === cat }]"
+          @click="activeCategory = cat"
+        >
+          {{ cat }}
+        </button>
+      </div>
+      <div class="products-grid">
+        <div 
+          v-for="product in filteredProducts" 
+          :key="product.id"
+          class="product-card"
+          :class="{ 'in-cart': isInCart(product.id) }"
+        >
+          <div class="product-image">{{ product.image }}</div>
+          <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <p class="product-desc">{{ product.desc }}</p>
+            <div class="product-footer">
+              <span class="product-price">{{ product.price.toLocaleString() }} ₽</span>
+              <button 
+                class="btn-add"
+                @click="toggleCart(product)"
+              >
+                {{ isInCart(product.id) ? '✓ В корзине' : '+ В корзину' }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3>Быстрая доставка</h3>
+        <p>Доставим за 2 часа по Москве и СПб</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🛡️</div>
+        <h3>Гарантия 2 года</h3>
+        <p>На все товары без исключения</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💰</div>
+        <h3>Возврат 30 дней</h3>
+        <p>Не понравилось — вернём деньги</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>Безопасная оплата</h3>
+        <p>SSL-шифрование всех транзакций</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-content">
+        <h2>О TechStore</h2>
+        <p>Мы продаём только то, что сами используем. Каждый товар проходит ручной отбор и тестирование. Работаем с 2019 года, более 50 000 довольных клиентов.</p>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-num">50K+</span>
+            <span class="stat-label">Клиентов</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">4.9</span>
+            <span class="stat-label">Рейтинг</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">2ч</span>
+            <span class="stat-label">Доставка</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+      <h2>Свяжитесь с нами</h2>
+      <form class="contact-form" @submit.prevent="submitForm">
+        <input type="text" placeholder="Ваше имя" v-model="form.name" required />
+        <input type="email" placeholder="Email" v-model="form.email" required />
+        <textarea placeholder="Сообщение" v-model="form.message" rows="4" required></textarea>
+        <button type="submit" class="btn-primary">Отправить</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 TechStore. Все права защищены.</p>
+      <div class="socials">
+        <span>📱</span>
+        <span>💬</span>
+        <span>📸</span>
+      </div>
+    </footer>
+
+    <div class="cart-overlay" v-if="showCart" @click="showCart = false"></div>
+    <div class="cart-sidebar" :class="{ open: showCart }">
+      <div class="cart-header">
+        <h3>Корзина</h3>
+        <button class="close-btn" @click="showCart = false">×</button>
+      </div>
+      <div class="cart-items" v-if="cart.length">
+        <div v-for="item in cart" :key="item.id" class="cart-item">
+          <span class="cart-item-name">{{ item.name }}</span>
+          <span class="cart-item-price">{{ item.price.toLocaleString() }} ₽</span>
+          <button class="remove-btn" @click="removeFromCart(item.id)">×</button>
+        </div>
+      </div>
+      <div class="cart-empty" v-else>
+        Корзина пуста
+      </div>
+      <div class="cart-total" v-if="cart.length">
+        <strong>Итого: {{ cartTotal.toLocaleString() }} ₽</strong>
+        <button class="btn-primary checkout">Оформить заказ</button>
+      </div>
+    </div>
+
+    <div class="toast" :class="{ show: toast.show }">
+      {{ toast.message }}
+    </div>
+  </div>
+
+ <script src="script.js"></script>
+</body>
+</html>

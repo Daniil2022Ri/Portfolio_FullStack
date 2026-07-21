@@ -1,0 +1,76 @@
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0c1222; color: #e2e8f0; }
+    
+    .header { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(12,18,34,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .logo { font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, #f59e0b, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .search-box { position: relative; }
+    .search-box input { padding: 0.8rem 1rem 0.8rem 2.8rem; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); color: #e2e8f0; font-size: 0.95rem; outline: none; width: 320px; transition: all 0.2s; }
+    .search-box input:focus { border-color: rgba(245,158,11,0.4); background: rgba(255,255,255,0.05); }
+    .search-box::before { content: '🔍'; position: absolute; left: 0.9rem; top: 50%; transform: translateY(-50%); font-size: 0.9rem; opacity: 0.5; }
+    
+    .search-dropdown { position: absolute; top: calc(100% + 0.5rem); left: 0; right: 0; background: rgba(20,25,40,0.98); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; z-index: 200; max-height: 300px; overflow-y: auto; }
+    .search-item { padding: 0.8rem 1rem; cursor: pointer; transition: all 0.15s; display: flex; justify-content: space-between; align-items: center; }
+    .search-item:hover { background: rgba(245,158,11,0.1); }
+    .search-item span:first-child { font-weight: 600; font-size: 0.9rem; }
+    .search-item span:last-child { color: #64748b; font-size: 0.8rem; }
+    
+    .main { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+    
+    .loading { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 1rem; }
+    .spinner { width: 40px; height: 40px; border: 3px solid rgba(245,158,11,0.2); border-top-color: #f59e0b; border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading p { color: #64748b; }
+    
+    .error { text-align: center; padding: 4rem; color: #ef4444; }
+    .error button { margin-top: 1rem; padding: 0.7rem 1.5rem; border-radius: 10px; border: none; background: #f59e0b; color: #0c1222; font-weight: 700; cursor: pointer; }
+    
+    .hero-weather { background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(249,115,22,0.06)); border: 1px solid rgba(245,158,11,0.15); border-radius: 28px; padding: 3rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+    .hero-weather::before { content: ''; position: absolute; top: -50%; right: -20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(245,158,11,0.15), transparent 70%); filter: blur(60px); }
+    .hw-content { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; }
+    .hw-left h1 { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .hw-city { font-size: 1.2rem; color: #94a3b8; margin-bottom: 0.3rem; }
+    .hw-date { color: #64748b; font-size: 0.9rem; }
+    .hw-right { text-align: center; }
+    .hw-icon { font-size: 5rem; display: block; margin-bottom: 0.5rem; }
+    .hw-temp { font-size: 4.5rem; font-weight: 800; line-height: 1; }
+    .hw-feels { color: #94a3b8; font-size: 0.9rem; margin-top: 0.3rem; }
+    
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+    .stat-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 18px; padding: 1.5rem; text-align: center; transition: all 0.3s; }
+    .stat-card:hover { border-color: rgba(245,158,11,0.2); transform: translateY(-3px); }
+    .stat-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .stat-val { font-size: 1.5rem; font-weight: 800; display: block; margin-bottom: 0.2rem; }
+    .stat-label { color: #64748b; font-size: 0.8rem; }
+    
+    .hourly-section { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; padding: 1.5rem 2rem; margin-bottom: 2rem; }
+    .hourly-section h3 { font-size: 1.05rem; margin-bottom: 1.2rem; }
+    .hourly-scroll { display: flex; gap: 0.6rem; overflow-x: auto; padding-bottom: 0.5rem; }
+    .hourly-scroll::-webkit-scrollbar { height: 4px; }
+    .hourly-scroll::-webkit-scrollbar-thumb { background: rgba(245,158,11,0.3); border-radius: 4px; }
+    .hour-item { flex-shrink: 0; text-align: center; padding: 0.9rem; background: rgba(255,255,255,0.02); border-radius: 14px; min-width: 65px; transition: all 0.2s; }
+    .hour-item:hover { background: rgba(245,158,11,0.08); }
+    .hour-time { font-size: 0.7rem; color: #64748b; margin-bottom: 0.4rem; }
+    .hour-icon { font-size: 1.4rem; display: block; margin-bottom: 0.3rem; }
+    .hour-temp { font-weight: 700; font-size: 0.9rem; }
+    
+    .forecast-section { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; padding: 1.5rem 2rem; }
+    .forecast-section h3 { font-size: 1.05rem; margin-bottom: 1.2rem; }
+    .forecast-list { display: flex; flex-direction: column; gap: 0.4rem; }
+    .forecast-row { display: grid; grid-template-columns: 70px 1fr 55px 55px 50px; align-items: center; gap: 1rem; padding: 0.9rem 1.2rem; border-radius: 14px; transition: all 0.2s; }
+    .forecast-row:hover { background: rgba(255,255,255,0.02); }
+    .f-day { font-weight: 600; font-size: 0.9rem; }
+    .f-bar-wrap { height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; position: relative; overflow: hidden; }
+    .f-bar { position: absolute; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #f59e0b, #f97316); }
+    .f-low, .f-high { font-weight: 700; font-size: 0.85rem; text-align: center; }
+    .f-low { color: #64748b; }
+    .f-icon { text-align: center; font-size: 1.2rem; }
+    
+    @media (max-width: 768px) {
+      .search-box input { width: 200px; }
+      .hw-content { flex-direction: column; text-align: center; gap: 1.5rem; }
+      .hw-temp { font-size: 3.5rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .forecast-row { grid-template-columns: 50px 1fr 45px 45px 35px; gap: 0.5rem; padding: 0.7rem; }
+    }
