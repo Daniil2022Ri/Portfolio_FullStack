@@ -171,21 +171,21 @@ const layoutSites = [
     id: 1, title: 'TechStore', desc: 'Магазин гаджетов на Vue 3. Тёмная тема, корзина, фильтрация, адаптив.',
     stack: ['Vue 3', 'CSS Grid', 'Composition API'],
     color: '#6366f1',
-    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Normal_verstka_Web/Site_Gadjet_Store/',
+    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Normal_verstka_Web/Site_Gadjet_Store/index.html',
     preview: `<div style="background:#0a0a0f;padding:20px;border-radius:12px;height:100%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;width:60%;background:linear-gradient(90deg,#6366f1,#a855f7);border-radius:4px"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1"><div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px"><div style="height:30px;font-size:20px">📱</div></div><div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px"><div style="height:30px;font-size:20px">🎧</div></div><div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px"><div style="height:30px;font-size:20px">⌚</div></div><div style="background:rgba(255,255,255,0.03);border-radius:8px;padding:10px"><div style="height:30px;font-size:20px">🔌</div></div></div></div>`
   },
   {
     id: 2, title: 'KickStore', desc: 'Магазин кроссовок на React 18. Параллакс, лайки, бегущая строка.',
     stack: ['React 18', 'useMemo', 'CSS Animations'],
     color: '#ec4899',
-    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Normal_verstka_Web/Site_kick_Store/',
+    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Normal_verstka_Web/Site_kick_Store/index.html',
     preview: `<div style="background:#0c0c12;padding:20px;border-radius:12px;height:100%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;width:50%;background:#fff;border-radius:4px"></div><div style="display:flex;gap:8px;flex:1;align-items:center;justify-content:center"><div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:15px;transform:rotate(-8deg)"><span style="font-size:24px">👟</span></div><div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:15px;transform:rotate(6deg)"><span style="font-size:24px">⚽</span></div><div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:15px;transform:rotate(-4deg)"><span style="font-size:24px">🏀</span></div></div></div>`
   },
   {
     id: 3, title: 'Wanderlust', desc: 'Туристический сайт на React. Реальные фото, модальные окна, адаптив.',
     stack: ['React 18', 'Lazy Loading', 'CSS Grid'],
     color: '#06b6d4',
-    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Normal_verstka_Web/Site_shooth_Store/',
+    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Normal_verstka_Web/Site_shooth_Store/index.html',
     preview: `<div style="background:#08080f;padding:20px;border-radius:12px;height:100%;display:flex;flex-direction:column;gap:8px"><div style="height:8px;width:70%;background:linear-gradient(90deg,#7c3aed,#06b6d4);border-radius:4px"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;flex:1;overflow:hidden"><img src="https://th.bing.com/th/id/OIP.LxVwjrsXVYG0vT-cbfkUkAHaE7?w=234&h=180&c=7&r=0&o=7&pid=1.7&rm=3" style="width:100%;height:100%;object-fit:cover;border-radius:6px;opacity:0.85" alt="Санторини"/><img src="https://th.bing.com/th/id/OIP.KXKMwGm8J9BGupJYJK36_wHaE8?w=266&h=180&c=7&r=0&o=7&pid=1.7&rm=3" style="width:100%;height:100%;object-fit:cover;border-radius:6px;opacity:0.85" alt="Бали"/><img src="https://th.bing.com/th/id/OIP.FaraYcZ1xh91DWAiZvsAOgHaEK?w=299&h=180&c=7&r=0&o=7&pid=1.7&rm=3" style="width:100%;height:100%;object-fit:cover;border-radius:6px;opacity:0.85" alt="Альпы"/></div></div>`
   }
 ];
@@ -196,7 +196,7 @@ const apiProjects = [
     stack: ['React', 'Open-Meteo API', 'Fetch'],
     color: '#f59e0b',
     live: true,
-    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Web_API_sites/CurrencyHub/',
+    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Web_API_sites/CurrencyHub/index.html',
     preview: `<div style="background:#0c1222;padding:20px;border-radius:12px;height:100%;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:28px">☀️</span><span style="font-size:32px;font-weight:800;color:#f59e0b">24°</span></div><div style="display:flex;gap:4px;margin-top:auto"><div style="flex:1;height:30px;background:rgba(245,158,11,0.2);border-radius:4px"></div><div style="flex:1;height:40px;background:rgba(245,158,11,0.3);border-radius:4px"></div><div style="flex:1;height:25px;background:rgba(245,158,11,0.15);border-radius:4px"></div><div style="flex:1;height:35px;background:rgba(245,158,11,0.25);border-radius:4px"></div></div></div>`
   },
   {
@@ -204,7 +204,7 @@ const apiProjects = [
     stack: ['React', 'exchangerate-api', 'Charts'],
     color: '#22c55e',
     live: true,
-    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Web_API_sites/Weather_monitoring_site',
+    github: 'https://github.com/Daniil2022Ri/Portfolio_FullStack/tree/main/Web_API_sites/Weather_monitoring_site/index.html',
     preview: `<div style="background:#0a0f1a;padding:20px;border-radius:12px;height:100%;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:20px">🇺🇸 → 🇷🇺</span><span style="font-size:24px;font-weight:800;color:#22c55e">91.45</span></div><div style="display:flex;align-items:flex-end;gap:3px;margin-top:auto;height:50px"><div style="flex:1;height:40%;background:rgba(34,197,94,0.3);border-radius:3px"></div><div style="flex:1;height:60%;background:rgba(34,197,94,0.4);border-radius:3px"></div><div style="flex:1;height:50%;background:rgba(34,197,94,0.35);border-radius:3px"></div><div style="flex:1;height:70%;background:rgba(34,197,94,0.5);border-radius:3px"></div><div style="flex:1;height:55%;background:rgba(34,197,94,0.38);border-radius:3px"></div><div style="flex:1;height:80%;background:rgba(34,197,94,0.55);border-radius:3px"></div><div style="flex:1;height:65%;background:rgba(34,197,94,0.45);border-radius:3px"></div></div></div>`
   }
 ];
