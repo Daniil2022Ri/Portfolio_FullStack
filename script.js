@@ -534,8 +534,9 @@ function App() {
               <div className="br-contact-links">
                 <a href="https://github.com/Daniil2022Ri" target="_blank" rel="noopener noreferrer" className="br-contact-link"><span className="br-link-icon">💻</span><span>github.com/Daniil2022Ri</span></a>
                 <a href="mailto:dryniakov@mail.ru" className="br-contact-link"><span className="br-link-icon">✉️</span><span>dryniakov@mail.ru</span></a>
+                <a href="mailto:hhffcgubv@gmail.com" className="br-contact-link"><span className="br-link-icon">✉️</span><span>hhffcgubv@gmail.com</span></a>
                 <a href="tel:+79284102669" className="br-contact-link"><span className="br-link-icon">📞</span><span>+7 (928) 410-26-69</span></a>
-                <a href="https://t.me/danilRyDeveloperFullStak" target="_blank" rel="noopener noreferrer" className="br-contact-link"><span className="br-link-icon">💬</span><span>t.me/danilRyDeveloperFullStak</span></a>
+                <a href="https://t.me/danilRyDeveloperFullStak" target="_blank" rel="noopener noreferrer" className="br-contact-link"><span className="br-link-icon">💬</span><span>t.me/danilRyDeveloperFullStack</span></a>
               </div>
             </div>
             
